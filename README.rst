@@ -9,8 +9,8 @@ Boostraping
 
    .. code::
    
-       mkdir teamrouulette
-       cd teamrouulette
+       mkdir teamroulette
+       cd teamroulette
        python3.4 -m venv .venv
 
 2. Activar entorno
