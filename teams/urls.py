@@ -1,7 +1,8 @@
 from rest_framework.routers import DefaultRouter
-from .viewsets import TeamViewSet
+from . import viewsets
 
 router = DefaultRouter()
-router.register('teams', TeamViewSet)
+router.register('teams', viewsets.TeamViewSet)
+router.register('players', viewsets.PlayerViewSet)
 
 urlpatterns = router.urls
