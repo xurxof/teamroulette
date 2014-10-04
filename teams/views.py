@@ -2,10 +2,10 @@ from django.shortcuts import render, redirect
 from . import forms
 
 def main(request):
+    dictionary = {'name': 'Miguel'}
     if request.method == 'GET':
         form = forms.TeamForm()
-        dictionary = {'name': 'Miguel',
-                      'form': form}
+        dictionary['form'] = form
         return render(request,
                       'teams/index.html',
                       dictionary=dictionary)
@@ -14,9 +14,7 @@ def main(request):
         if form.is_valid():
             return redirect('/')
         else:
-            dictionary = {'name': 'Miguel',
-                          'form': form}
+            dictionary['form'] = form
             return render(request,
                           'teams/index.html',
                           dictionary=dictionary)
-
