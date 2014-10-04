@@ -1,6 +1,10 @@
 from django.shortcuts import render
+from . import forms
 
 def main(request):
+    form = forms.TeamForm()
+    dictionary = {'name': 'Miguel',
+                  'form': form}
     return render(request,
                   'teams/index.html',
-                  dictionary={'name': 'Miguel'})
+                  dictionary=dictionary)
