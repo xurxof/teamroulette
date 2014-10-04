@@ -12,6 +12,8 @@ def process_form(request, form_class):
     elif request.method == 'POST':
         form = form_class(data=request.POST)
         if form.is_valid():
+            if hasattr(form, 'save'):
+                form.save()
             return redirect('/')
         else:
             dictionary['form'] = form
