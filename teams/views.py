@@ -19,6 +19,17 @@ def process_form(request, form_class):
                           'teams/index.html',
                           dictionary=dictionary)
 
-def main(request):
+def team(request):
     form_class = forms.TeamForm
     return process_form(request, form_class)
+
+def player(request):
+    form_class = forms.PlayerModelForm
+    return process_form(request, form_class)
+
+
+
+
+
+
+
