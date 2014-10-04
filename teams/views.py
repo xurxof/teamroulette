@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from . import forms
 
 def main(request):
@@ -12,7 +12,7 @@ def main(request):
     elif request.method == 'POST':
         form = forms.TeamForm(data=request.POST)
         if form.is_valid():
-            assert False
+            return redirect('/')
         else:
             dictionary = {'name': 'Miguel',
                           'form': form}
