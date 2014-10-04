@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect
+from django.core.urlresolvers import reverse
+
 from . import forms
 
 def process_form(request, form_class):
@@ -14,7 +16,7 @@ def process_form(request, form_class):
         if form.is_valid():
             if hasattr(form, 'save'):
                 form.save()
-            return redirect('/')
+            return redirect(reverse('home'))
         else:
             dictionary['form'] = form
             return render(request,
